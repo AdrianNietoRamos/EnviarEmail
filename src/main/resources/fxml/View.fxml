@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="view" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="290.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="0.0" prefWidth="90.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="22.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="38.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <Label text="Servidor SMTP:" />
+      <Label text="Usar conexion ssl:" GridPane.rowIndex="1" />
+      <Label text="Remitente(From)" GridPane.rowIndex="2" />
+      <Label text="Destinatario(to)" GridPane.rowIndex="3" />
+      <Label text="Asunto(Subject)" GridPane.rowIndex="4" />
+      <TextField fx:id="servidorText" promptText="Direccion del servidor" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></TextField>
+      <TextField fx:id="puertoText" promptText="Puerto" GridPane.columnIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" top="5.0" />
+         </GridPane.margin></TextField>
+      <TextField fx:id="destinatarioText" promptText="Email del destinatario" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></TextField>
+      <TextField fx:id="asuntoText" promptText="Asunto" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></TextField>
+      <TextArea fx:id="mensajeText" promptText="Mensaje" GridPane.columnSpan="3" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin></TextArea>
+      <CheckBox fx:id="sslCheck" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></CheckBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="remitenteText" prefHeight="25.0" prefWidth="250.0" promptText="Email del remitente" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <PasswordField fx:id="contraText" promptText="Contraseña">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin></PasswordField>
+         </children>
+      </HBox>
+      <Button fx:id="enviarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onEnviarButton" text="Enviar" GridPane.columnIndex="3">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="limpiarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLimpiarButton" text="Limpiar" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="cerrarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCerrarButton" text="Cerrar" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Button>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="5.0" left="5.0" top="5.0" />
+   </padding>
+</GridPane>
